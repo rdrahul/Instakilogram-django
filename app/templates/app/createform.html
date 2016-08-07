@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+{%  load crispy_forms_tags %}
+{% block content %}
+
+<div class=" row container " style="margin-top:30px" >        
+    
+     <div class="col span-1-of-2" >    
+        <form class="form-horizontal " method="post">
+            {% csrf_token %}
+            <div class="form-input" >
+                <input class="text-input"  type="text" name="name" id="id_name" placeholder="Enter Name Of Folder "  >
+            </div>
+            <div class="form-input" >
+                <textarea class="text-input"  name="description" id="id_description" placeholder="enter some detail" ></textarea>
+            </div>
+            <input class="btn-submit" type="submit" value="create" >
+        </form>
+     </div>        
+   
+</div>
+{% endblock %}

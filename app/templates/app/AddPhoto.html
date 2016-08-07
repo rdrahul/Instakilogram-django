@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+{%  load crispy_forms_tags %}
+{% block content %}
+
+<div class=" row container " style="margin-top:30px" >        
+    <div class="col span-1-of-2" >      
+        <form class="form-horizontal " method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+            <div class="form-input"> 
+                    <input class="text-input" id="id_title" maxlength="250" name="title" type="text" placeholder="Name"> 
+            </div>
+            <div class="form-input">
+                <input class="text-input " id="id_caption" maxlength="250" name="caption" type="text" placeholder="Caption"> 
+            </div>
+            <div class="clearablefileinput btn-submit"> 
+                <span>Choose File</span>
+                <input  id="id_image" name="image" type="file"> 
+            </div>
+            <input type="submit" name="submit" value="Create" class="btn-submit" id="submit-id-submit">     
+        </form>        
+    </div>
+</div>
+
+
+
+                          
+
+{% endblock %}
