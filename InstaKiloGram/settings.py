@@ -3,6 +3,8 @@ Django settings for InstaKiloGram project.
 """
 import os
 from os import path
+from amazonservices import ACCESS_KEY,SECRET_KEY,BUCKET_NAME
+
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
 DEBUG = True
@@ -130,6 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'app',
     'crispy_forms',
     # Uncomment the next line to enable the admin:
@@ -170,3 +173,10 @@ LOGGING = {
 
 # Specify the default test runner.
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+"""
+DEFAULT_FILE_STORAGE='storages.backends.s3boto.S3BotoStorage'
+
+AWS_ACCESS_KEY_ID =ACCESS_KEY
+AWS_SECRET_ACCESS_KEY=SECRET_KEY
+AWS_STORAGE_BUCKET_NAME = BUCKET_NAME
+"""
